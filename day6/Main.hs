@@ -1,12 +1,14 @@
 module Main where
 
 import Control.Arrow (Arrow((&&&)))
+import Data.List.Split (splitOn)
+import Data.List (nub)
 
 parseInput :: String -> [String]
-parseInput = const []
+parseInput = fmap (filter (`notElem` "\n")) . splitOn "\n\n"
 
-solveP1 :: [String] -> ()
-solveP1 = const ()
+solveP1 :: [String] -> Int
+solveP1 = sum . fmap (length . nub)
 
 solveP2 :: [String] -> ()
 solveP2 = const ()
