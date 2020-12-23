@@ -2,3 +2,5 @@
 tmp/
 
 /**/dist-newstyle/
+/day*/day*example.txt
+/day*/day*inp.txt
