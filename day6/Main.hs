@@ -5,13 +5,10 @@ import Data.List.Split (splitOn)
 import Control.Monad (join)
 import Data.List (nub, intersect)
 
-type Answers = String
-type Group = [Answers]
-
-parseInput :: String -> [Group]
+parseInput :: String -> [[String]]
 parseInput = fmap (filter (not . null) . splitOn "\n") . splitOn "\n\n"
 
-solveP1 :: [Group] -> Int
+solveP1 :: [[String]] -> Int
 solveP1 = sum . fmap (length . nub . join)
 
 solveP2 :: [[String]] -> Int
