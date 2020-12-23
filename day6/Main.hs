@@ -6,7 +6,7 @@ import Control.Monad (join)
 import Data.List (nub, intersect)
 
 parseInput :: String -> [[String]]
-parseInput = fmap (filter (not . null) . splitOn "\n") . splitOn "\n\n"
+parseInput = fmap lines . splitOn "\n\n"
 
 solveP1 :: [[String]] -> Int
 solveP1 = sum . fmap (length . nub . join)
