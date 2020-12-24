@@ -14,10 +14,8 @@ solveP1 = sum . fmap (length . nub . join)
 solveP2 :: [[String]] -> Int
 solveP2 = sum . fmap answers
   where
-    answers [x] = length x
-    answers xs  = (length . same) xs
-
-    same (x:xs) = foldr intersect x xs
+    answers [x]    = length x
+    answers (x:xs) = length . foldr intersect x $ xs
 
 main :: IO ()
 main = print . (solveP1 &&& solveP2) . parseInput =<< readFile "./input.txt"
