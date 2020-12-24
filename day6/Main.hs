@@ -20,4 +20,4 @@ solveP2 = sum . fmap answers
     same (x:xs) = foldr intersect x xs
 
 main :: IO ()
-main = print . (solveP1 &&& solveP2) . parseInput =<< readFile "./day6inp.txt"
+main = print . (solveP1 &&& solveP2) . parseInput =<< readFile "./input.txt"
